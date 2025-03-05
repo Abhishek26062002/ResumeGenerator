@@ -139,7 +139,7 @@ const ResumeForm = () => {
       body: JSON.stringify(formData)
     };
     
-    fetch("http://127.0.0.1:8000/generate", options)
+    fetch("https://resumegenerator-ab8r.onrender.com/generate", options)
       .then(function(response) {
         return response.json();
       })
