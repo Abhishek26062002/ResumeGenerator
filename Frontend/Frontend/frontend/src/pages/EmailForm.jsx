@@ -29,7 +29,7 @@ const EmailForm = () => {
     setCopied(false);
     
     try {
-      const response = await fetch("http://127.0.0.1:8000/GetLetter", {
+      const response = await fetch("https://resumegenerator-ab8r.onrender.com/GetLetter", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(formData),
