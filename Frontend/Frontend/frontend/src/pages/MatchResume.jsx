@@ -20,7 +20,7 @@ const MatchResume = () => {
     formData.append("description", jobDescription.trim());
   
     try {
-      const response = await fetch("http://localhost:8000/CompareText", {
+      const response = await fetch("https://resumegenerator-ab8r.onrender.com/CompareText", {
         method: "POST",
         body: formData,
       });
