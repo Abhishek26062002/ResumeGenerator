@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Download, Loader } from 'lucide-react';
 import jsPDF from 'jspdf';
-import './ResumePreview.css';
+import './resumepreview.css';
 
 function ResumePreview() {
   const location = useLocation();
