@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Professional Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Calibri', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .page {
+            width: 210mm;  /* A4 width */
+            height: 297mm;  /* A4 height */
+            background: white;
+            padding: 25mm 20mm;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            margin: 0 auto;
+        }
+
+        .header {
+            border-bottom: 3px solid #2B3A55;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            color: #2B3A55;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            color: #555;
+            font-size: 11pt;
+        }
+
+        .section {
+            margin-bottom: 22px;
+        }
+
+        .section-title {
+            color: #2B3A55;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #2B3A55;
+            margin-left: 10px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 18px;
+        }
+
+        .experience-item h3, .education-item h3 {
+            color: #2B3A55;
+            font-size: 14pt;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .date-location {
+            color: #666;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .company-location {
+            color: #2B3A55;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            font-size: 11pt;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #2B3A55;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .skill {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            text-align: center;
+            border: 1px solid #2B3A55;
+            color: #2B3A55;
+            font-size: 11pt;
+        }
+
+        .professional-summary {
+            font-size: 11pt;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 25mm 20mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>John Doe</h1>
+            <div class="contact-info">
+                <span>San Francisco, CA</span>
+                <span>•</span>
+                <span>(123) 456-7890</span>
+                <span>•</span>
+                <span>john.doe@email.com</span>
+                <span>•</span>
+                <span>linkedin.com/in/johndoe</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="professional-summary">Results-driven Senior Software Engineer with 5+ years of expertise in full-stack development and cloud architecture. Demonstrated success in leading high-performance engineering teams and delivering enterprise-scale solutions that drive business growth. Specialized in cloud-native applications and microservices architecture.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Senior Software Engineer</h3>
+                <div class="date-location">
+                    <span class="company-location">Tech Solutions Inc., San Francisco</span>
+                    <span>Jan 2020 - Present</span>
+                </div>
+                <ul>
+                    <li>Spearheaded the development of a microservices-based platform that improved system performance by 40% and reduced operational costs by $200K annually</li>
+                    <li>Led a team of 5 developers in implementing cloud-native solutions using AWS, resulting in 99.99% system availability</li>
+                    <li>Architected and deployed containerized applications using Docker and Kubernetes, reducing deployment time by 60%</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Software Developer</h3>
+                <div class="date-location">
+                    <span class="company-location">Digital Innovations Corp, Boston</span>
+                    <span>Mar 2018 - Dec 2020</span>
+                </div>
+                <ul>
+                    <li>Engineered responsive web applications using React and Node.js, serving 100K+ daily active users</li>
+                    <li>Implemented automated testing procedures that reduced bug resolution time by 50%</li>
+                    <li>Collaborated with UX team to redesign core features, resulting in 35% improvement in user engagement</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <h3>Master of Science in Computer Science</h3>
+                <div class="date-location">
+                    <span class="company-location">Tech University</span>
+                    <span>2018</span>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>Bachelor of Science in Software Engineering</h3>
+                <div class="date-location">
+                    <span class="company-location">State University</span>
+                    <span>2016</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills">
+                <span class="skill">JavaScript/TypeScript</span>
+                <span class="skill">React/Next.js</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">Python</span>
+                <span class="skill">AWS Cloud</span>
+                <span class="skill">Docker</span>
+                <span class="skill">Kubernetes</span>
+                <span class="skill">MongoDB</span>
+                <span class="skill">PostgreSQL</span>
+                <span class="skill">CI/CD</span>
+                <span class="skill">System Design</span>
+                <span class="skill">Agile/Scrum</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

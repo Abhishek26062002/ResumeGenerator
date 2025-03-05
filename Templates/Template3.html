@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Executive Resume</title>
+    <style>
+      :root {
+        --primary: #1a365d;
+        --secondary: #2c5282;
+        --accent: #e2e8f0;
+        --text: #2d3748;
+        --text-light: #4a5568;
+        --border: #cbd5e0;
+        --background: #ffffff;
+        --header-bg: #f8fafc;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Georgia', serif;
+        line-height: 1.6;
+        color: var(--text);
+        background: var(--background);
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        background: var(--background);
+      }
+
+      .header {
+        background: var(--header-bg);
+        padding: 2.5rem 3rem;
+        border-bottom: 3px solid var(--primary);
+      }
+
+      .name {
+        font-size: 2.2rem;
+        color: var(--primary);
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+      }
+
+      .title {
+        font-size: 1.1rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-size: 0.9rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-light);
+      }
+
+      .main-content {
+        padding: 2rem 3rem;
+      }
+
+      .section {
+        margin-bottom: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.25rem;
+        color: var(--primary);
+        font-weight: normal;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+      }
+
+      .experience-item {
+        margin-bottom: 1.5rem;
+        page-break-inside: avoid;
+      }
+
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+      }
+
+      .position-info h3 {
+        font-size: 1.1rem;
+        color: var(--secondary);
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+      }
+
+      .company {
+        font-size: 1rem;
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      .date {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        font-style: italic;
+      }
+
+      .description {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.7;
+      }
+
+      .achievements {
+        padding-left: 1.25rem;
+      }
+
+      .achievements li {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .skill-category {
+        margin-bottom: 1rem;
+      }
+
+      .skill-category h4 {
+        color: var(--secondary);
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+      }
+
+      .skill-list {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+
+        body {
+          background: white;
+        }
+
+        .page {
+          width: 210mm;
+          height: 297mm;
+          margin: 0;
+          box-shadow: none;
+        }
+
+        .header {
+          background-color: var(--header-bg) !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="name">Michael Richardson</h1>
+        <div class="title">Senior Technology Executive</div>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span>m.richardson@email.com</span>
+          </div>
+          <div class="contact-item">
+            <span>(617) 555-0123</span>
+          </div>
+          <div class="contact-item">
+            <span>Boston, Massachusetts</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="section">
+          <h2 class="section-title">Executive Summary</h2>
+          <p class="description">
+            Technology executive with 15+ years of experience driving digital transformation and innovation in enterprise environments. Proven track record of leading high-performing teams and delivering complex technical solutions that align with business objectives.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Professional Experience</h2>
+          
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="position-info">
+                <h3>Chief Technology Officer</h3>
+                <div class="company">Enterprise Solutions Global</div>
+              </div>
+              <div class="date">2019 - Present</div>
+            </div>
+            <div class="achievements">
+              <li>Led digital transformation initiatives resulting in 40% improvement in operational efficiency</li>
+              <li>Managed technology budget of $50M and team of 120+ technology professionals</li>
+              <li>Established enterprise architecture practice and cloud adoption strategy</li>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="position-info">
+                <h3>VP of Engineering</h3>
+                <div class="company">Innovation Technologies Inc.</div>
+              </div>
+              <div class="date">2015 - 2019</div>
+            </div>
+            <div class="achievements">
+              <li>Scaled engineering organization from 20 to 85 professionals across 3 global offices</li>
+              <li>Implemented Agile methodologies, reducing time-to-market by 60%</li>
+              <li>Led development of company's flagship SaaS platform</li>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Areas of Expertise</h2>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h4>Strategic Leadership</h4>
+              <div class="skill-list">
+                Digital Transformation, Enterprise Architecture, Technology Innovation, Strategic Planning
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Technical Management</h4>
+              <div class="skill-list">
+                Cloud Computing, Systems Integration, Agile Methodologies, DevOps
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Business Operations</h4>
+              <div class="skill-list">
+                Budget Management, Vendor Relations, Team Leadership, Risk Management
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Industry Knowledge</h4>
+              <div class="skill-list">
+                Enterprise Software, SaaS Platforms, Data Analytics, Information Security
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Education & Credentials</h2>
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="position-info">
+                <h3>Master of Business Administration</h3>
+                <div class="company">Harvard Business School</div>
+              </div>
+              <div class="date">2010</div>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="position-info">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <div class="company">Massachusetts Institute of Technology</div>
+              </div>
+              <div class="date">2005</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

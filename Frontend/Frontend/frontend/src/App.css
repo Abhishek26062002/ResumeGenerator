@@ -1,0 +1,8 @@
+body::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+  }
+.result{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+}

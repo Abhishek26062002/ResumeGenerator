@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-item h3, .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .date-location {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #f0f2f5;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>John Doe</h1>
+            <div class="contact-info">
+                <p>123 Professional Street • City, State 12345</p>
+                <p>Phone: (123) 456-7890 • Email: john.doe@email.com</p>
+                <p>LinkedIn: linkedin.com/in/johndoe • GitHub: github.com/johndoe</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>Experienced software developer with over 5 years of expertise in web development and cloud computing. Proven track record of delivering high-quality solutions and leading cross-functional teams.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Senior Software Engineer</h3>
+                <div class="date-location">Tech Solutions Inc. • 2020 - Present • San Francisco, CA</div>
+                <ul>
+                    <li>Led development of cloud-based solutions resulting in 40% improvement in system performance</li>
+                    <li>Managed team of 5 developers and implemented agile methodologies</li>
+                    <li>Architected and deployed microservices infrastructure using Docker and Kubernetes</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Software Developer</h3>
+                <div class="date-location">Digital Innovations Corp • 2018 - 2020 • Boston, MA</div>
+                <ul>
+                    <li>Developed and maintained multiple web applications using React and Node.js</li>
+                    <li>Collaborated with UX team to implement responsive design principles</li>
+                    <li>Reduced bug resolution time by 50% through improved testing procedures</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <h3>Master of Science in Computer Science</h3>
+                <div class="date-location">Tech University • 2018 • GPA: 3.8</div>
+            </div>
+
+            <div class="education-item">
+                <h3>Bachelor of Science in Software Engineering</h3>
+                <div class="date-location">State University • 2016 • GPA: 3.9</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills">
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">Python</span>
+                <span class="skill">AWS</span>
+                <span class="skill">Docker</span>
+                <span class="skill">Kubernetes</span>
+                <span class="skill">Git</span>
+                <span class="skill">CI/CD</span>
+                <span class="skill">Agile</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

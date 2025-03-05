@@ -1,0 +1,39 @@
+.container {
+    width: auto !important; 
+    height: auto !important;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10mm 10mm !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top center;
+}
+
+/* ResumePreview.css */
+@media print {
+    .download-btn,
+    .preview-header {
+      display: none;
+    }
+    
+    .resume-container {
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .responsive-resume {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .preview-header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .download-btn {
+      font-size: 0.8rem;
+    }
+  }
+  

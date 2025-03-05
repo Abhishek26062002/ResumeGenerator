@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume of {{ profile.fullName }}</title>
+    <style>
+        /* A4 Paper Settings */
+:root {
+    --a4-width: 210mm;
+    --a4-height: 297mm;
+    --primary-color: #4A75BC;
+    --text-color: #333333;
+    --secondary-text: #666666;
+    --light-bg: #F8F9FA;
+}
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-bg);
+    margin: 0;
+    padding: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    width: var(--a4-width);
+    height: var(--a4-height);
+    margin: 0 auto;
+    background-color: white;
+    padding: 30mm 20mm;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top center;
+}
+
+/* Responsive scaling for mobile */
+@media screen and (max-width: 210mm) {
+    .container {
+        transform: scale(calc(100vw / var(--a4-width)));
+        margin: 0;
+    }
+}
+
+/* Main content layout */
+.main-content {
+    display: flex;
+    gap: 40px;
+}
+
+/* Columns */
+.left-column {
+    flex: 2;
+}
+
+.right-column {
+    flex: 1;
+    background-color: var(--light-bg);
+    padding: 20px;
+}
+
+/* Header */
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 36px;
+    margin: 0 0 5px 0;
+    font-weight: normal;
+}
+
+.job-title {
+    color: var(--secondary-text);
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Sections */
+section {
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin: 0 0 15px 0;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+}
+
+/* Education & Experience Items */
+.education-item, .experience-item {
+    margin-bottom: 20px;
+}
+
+.institution, .company {
+    color: var(--secondary-text);
+    margin: 0 0 5px 0;
+}
+
+.date {
+    color: var(--secondary-text);
+    font-size: 14px;
+    margin: 0 0 5px 0;
+}
+
+.description {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Lists */
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Right Column Specific */
+.right-column p {
+    font-size: 14px;
+    margin: 0 0 8px 0;
+}
+
+.interests {
+    font-style: italic;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        width: 210mm;
+        height: 297mm;
+        padding: 30mm 20mm;
+        box-shadow: none;
+        margin: 0;
+        transform: none;
+    }
+
+    .right-column {
+        background-color: #f8f9fa !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+        </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <header>
+                    <h1>{{ profile.fullName }}</h1>
+                </header>
+
+                <!-- Education -->
+                <section>
+                    <h2>Education</h2>
+                    {% for edu in education %}
+                    <div class="education-item">
+                        <h3>{{ edu.level }}</h3>
+                        <p class="institution">{{ edu.institution }}</p>
+                        <p class="date">Graduation Year: {{ edu.graduationYear }}</p>
+                        <p class="grade">Grade: {{ edu.grade }}</p>
+                    </div>
+                    {% endfor %}
+                </section>
+
+                <!-- Projects -->
+                <section>
+                    <h2>Projects</h2>
+                    {% for project in projects %}
+                    <div class="project-item">
+                        <h3>{{ project.title }}</h3>
+                        <p>Technologies: {{ project.technologies }}</p>
+                        <p>{{ project.description }}</p>
+                        <a href="{{ project.liveLink }}" target="_blank">Live Link</a>
+                    </div>
+                    {% endfor %}
+                </section>
+
+                <!-- Experience -->
+                <section>
+                    <h2>Experience</h2>
+                    {% for exp in experience %}
+                    <div class="experience-item">
+                        <h3>{{ exp.jobTitle }}</h3>
+                        <p class="company">{{ exp.company }}</p>
+                        <p class="date">{{ exp.duration }}</p>
+                        <p class="description">{{ exp.description }}</p>
+                    </div>
+                    {% endfor %}
+                </section>
+
+                <!-- Certificates -->
+                <section>
+                    <h2>Certificates</h2>
+                    {% for cert in certificates %}
+                    <div class="certificate-item">
+                        <h3>{{ cert.name }}</h3>
+                        <p>Issuer: {{ cert.issuer }}</p>
+                        <p>Date: {{ cert.date }}</p>
+                    </div>
+                    {% endfor %}
+                </section>
+
+                <!-- Achievements -->
+                <section>
+                    <h2>Achievements</h2>
+                    {% for achievement in achievements %}
+                    <div class="achievement-item">
+                        <p>{{ achievement.title }}: {{ achievement.description }}</p>
+                    </div>
+                    {% endfor %}
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Contact Details -->
+                <section>
+                    <h2>Contact Details</h2>
+                    <p>Phone: {{ contact.phone }}</p>
+                    <p>Email: {{ contact.email }}</p>
+                    <p>Address: {{ contact.address }}</p>
+                    {% for link in profile.socialLinks %}
+                    <p>{{ link.platform }}: <a href="{{ link.url }}" target="_blank">{{ link.url }}</a></p>
+                    {% endfor %}
+                </section>
+
+                <!-- Skills -->
+                <section>
+                    <h2>Skills</h2>
+                    {% for skill in skills %}
+                    <p><strong>{{ skill.category }}:</strong> {{ skill.technologies }}</p>
+                    {% endfor %}
+                </section>
+
+                <!-- Others -->
+                <section>
+                    <h2>Others</h2>
+                    <p>{{ others }}</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

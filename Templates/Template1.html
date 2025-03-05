@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Resume</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.5;
+        background-color: #f3f4f6;
+        padding: 2rem 1rem;
+      }
+
+      /* Container */
+      .container {
+        max-width: 850px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 2rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .header h1 {
+        font-size: 2.25rem;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        color: #4b5563;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
+      /* Sections */
+      section {
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        color: #1f2937;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #e5e7eb;
+      }
+
+      /* Experience */
+      .job {
+        margin-bottom: 1rem;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.25rem;
+      }
+
+      .job-title {
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      .job-date {
+        color: #6b7280;
+      }
+
+      .company {
+        margin-bottom: 0.5rem;
+      }
+
+      .company-name {
+        font-weight: 500;
+        color: #374151;
+      }
+
+      .company-location {
+        color: #6b7280;
+      }
+
+      /* Lists */
+      ul {
+        list-style-position: inside;
+        color: #4b5563;
+        margin-left: 1rem;
+      }
+      .project-item {
+        margin-bottom: 1rem;
+      }
+      .project-item h3 {
+         font-weight: 600;
+         color: #1f2937;
+         margin-bottom: 0.25rem;
+      }
+
+      .project-item p{
+        color: #4b5563;
+      }
+
+
+       /* Certificates */
+       .certificate-item {
+        margin-bottom: 1rem;
+      }
+
+      .certificate-item h3 {
+          font-weight: 600;
+        color: #1f2937;
+         margin-bottom: 0.25rem;
+      }
+
+      .certificate-item p{
+        color: #4b5563;
+      }
+
+        /* Achievements */
+        .achievement-item {
+            margin-bottom: 1rem;
+        }
+
+        .achievement-item h3{
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+       .achievement-item p{
+            color: #4b5563;
+        }
+
+      /* Skills */
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill {
+        background-color: #f3f4f6;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        color: #374151;
+      }
+
+      /* Print styles */
+      @media print {
+        @page {
+          margin: 0.5in;
+        }
+
+        body {
+          background-color: white;
+          padding: 0;
+        }
+
+        .container {
+          box-shadow: none;
+          padding: 0;
+        }
+
+        .skill {
+          border: 1px solid #e5e7eb;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1 id="fullName"></h1>
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+            </svg>
+            <span id="email"></span>
+          </div>
+          <div class="contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+            </svg>
+            <span id="phone"></span>
+          </div>
+          <div class="contact-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+            </svg>
+            <span id="address"></span>
+          </div>
+           <div class="contact-item" id="linkedin">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+            </svg>
+            <span>LinkedIn</span>
+          </div>
+           <div class="contact-item" id="github">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+            </svg>
+            <span>GitHub</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Summary -->
+      <section>
+        <h2>Professional Summary</h2>
+        <p>
+            A highly motivated and results-driven individual with a strong foundation in computer science, eager to contribute technical expertise and learn from experienced professionals.
+        </p>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <h2>Experience</h2>
+          <div id="experience">
+
+          </div>
+      </section>
+
+       <!-- Projects -->
+      <section>
+          <h2>Projects</h2>
+           <div id="projects">
+
+          </div>
+      </section>
+
+      <!-- Education -->
+      <section>
+        <h2>Education</h2>
+          <div id="education">
+          </div>
+      </section>
+
+        <!-- Certificates -->
+    <section>
+        <h2>Certificates</h2>
+         <div id="certificates">
+
+        </div>
+    </section>
+    
+      <!-- Achievements -->
+    <section>
+        <h2>Achievements</h2>
+          <div id="achievements">
+
+        </div>
+    </section>
+
+
+      <!-- Skills -->
+      <section>
+        <h2>Skills</h2>
+        <div class="skills" id="skills"></div>
+      </section>
+    </div>
+
+    <script>
+    const formData = {
+    "profile": {
+        "fullName": "Salapu Rakesh",
+        "socialLinks": [
+            {
+                "platform": "LinkedIn",
+                "url": "https://www.linkedin.com/in/salapurakesh/"
+            },
+            {
+                "platform": "GitHub",
+                "url": "https://github.com/Rakesh2569"
+            }
+        ]
+    },
+    "contact": {
+        "email": "salapurakesh865@gmail.com",
+        "phone": "8142569928",
+        "address": "Dr no: 61-2-19/5,near United Church Street, Malkapuram, Visakhapatnam."
+    },
+    "education": [
+        {
+            "level": "Bachelor's",
+            "institution": "Avanthi Institute Of Engineering and Technology",
+            "graduationYear": "2024",
+            "grade": "7.62"
+        },
+        {
+            "level": "Intermediate",
+            "institution": "Ascent Classess",
+            "graduationYear": "2020",
+            "grade": "9.0"
+        },
+        {
+            "level": "School",
+            "institution": "S V V High School",
+            "graduationYear": "2018",
+            "grade": "9.0"
+        }
+    ],
+    "projects": [
+        {
+            "title": "EFlora",
+            "liveLink": "https://e-flora.vercel.app/",
+            "technologies": "ReactJS, NodeJs, MongoDb",
+            "description": "A plant ecommerece store using mern stack"
+        }
+    ],
+    "experience": [
+        {
+            "jobTitle": "NxtWave Student",
+            "company": "NaxtWave",
+            "duration": "July 2024 -  present",
+             "description":"I learning the fullstack devlopment"
+        }
+    ],
+    "certificates": [
+        {
+            "name": "NxtWave Python",
+            "issuer": "NxtWave",
+            "date": "2024-11-13"
+        },
+        {
+            "name": "NxtWave SQL",
+            "issuer": "NxtWave",
+            "date": "2024-12-20"
+        }
+    ],
+    "achievements": [
+        {
+            "title": "I have achieved 2nd place PPT in  tech fest In college",
+            "description": ""
+        }
+    ],
+    "others": ""
+};
+
+    // Populate basic info
+      document.getElementById('fullName').textContent = formData.profile.fullName;
+      document.getElementById('email').textContent = formData.contact.email;
+      document.getElementById('phone').textContent = formData.contact.phone;
+      document.getElementById('address').textContent = formData.contact.address;
+
+       // Handle social links (LinkedIn and GitHub)
+       const linkedinLink = formData.profile.socialLinks.find(link => link.platform === 'LinkedIn');
+       const githubLink = formData.profile.socialLinks.find(link => link.platform === 'GitHub');
+
+       if(linkedinLink) {
+            const linkedInContainer = document.getElementById('linkedin')
+            linkedInContainer.querySelector('span').textContent = 'LinkedIn';
+            linkedInContainer.addEventListener('click',() =>{
+                 window.open(linkedinLink.url,'_blank');
+            })
+
+       } else {
+           document.getElementById('linkedin').style.display = 'none';
+       }
+        if(githubLink) {
+              const githubContainer = document.getElementById('github');
+             githubContainer.querySelector('span').textContent = 'GitHub';
+                githubContainer.addEventListener('click',() =>{
+                     window.open(githubLink.url,'_blank');
+                })
+        }else{
+             document.getElementById('github').style.display = 'none';
+        }
+
+
+    // Populate Experience Section
+    const experienceContainer = document.getElementById('experience');
+    formData.experience.forEach(exp => {
+        const jobDiv = document.createElement('div');
+        jobDiv.className = 'job';
+        jobDiv.innerHTML = `
+            <div class="job-header">
+            <span class="job-title">${exp.jobTitle}</span>
+            <span class="job-date">${exp.duration}</span>
+            </div>
+             <div class="company">
+                <span class="company-name">${exp.company}</span>
+            </div>
+             <ul>
+               <li>${exp.description}</li>
+             </ul>
+            `;
+        experienceContainer.appendChild(jobDiv);
+    });
+
+
+  // Populate Projects Section
+    const projectsContainer = document.getElementById('projects');
+    formData.projects.forEach(project =>{
+        const projectDiv = document.createElement('div');
+        projectDiv.className = 'project-item';
+        projectDiv.innerHTML =`
+             <h3>${project.title}</h3>
+             <p><strong>Technologies: </strong> ${project.technologies}</p>
+             <p>${project.description}</p>
+        `
+        projectDiv.addEventListener('click',() =>{
+            window.open(project.liveLink,'_blank');
+        })
+        projectsContainer.appendChild(projectDiv)
+    })
+
+   // Populate Education Section
+    const educationContainer = document.getElementById('education');
+    formData.education.forEach(edu => {
+        const eduDiv = document.createElement('div');
+         eduDiv.className = 'job';
+        eduDiv.innerHTML = `
+        <div class="job-header">
+            <span class="job-title">${edu.level}</span>
+            <span class="job-date">${edu.graduationYear}</span>
+         </div>
+          <div class="company">
+            <span class="company-name">${edu.institution}</span>
+           </div>
+            <ul>
+                <li>Grade : ${edu.grade}</li>
+            </ul>
+            `;
+        educationContainer.appendChild(eduDiv);
+    });
+
+ // Populate Certificates Section
+ const certificatesContainer = document.getElementById('certificates');
+    formData.certificates.forEach(cert => {
+        const certDiv = document.createElement('div');
+        certDiv.className = 'certificate-item';
+        certDiv.innerHTML = `
+            <h3>${cert.name}</h3>
+             <p><strong>Issuer: </strong> ${cert.issuer}</p>
+            <p><strong>Date: </strong> ${cert.date}</p>
+        `;
+        certificatesContainer.appendChild(certDiv);
+    });
+
+    // Populate Achievements Section
+    const achievementsContainer = document.getElementById('achievements');
+    formData.achievements.forEach(achievement =>{
+        const achievementDiv = document.createElement('div');
+          achievementDiv.className = 'achievement-item';
+        achievementDiv.innerHTML = `
+          <h3>${achievement.title}</h3>
+          <p>${achievement.description}</p>
+        `
+          achievementsContainer.appendChild(achievementDiv)
+    })
+      // Add skills dynamically
+      const skills = [
+        'JavaScript', 'TypeScript', 'React', 'Node.js', 'MongoDB',
+        'Git', 'HTML','CSS','Python','SQL'
+      ];
+
+      const skillsContainer = document.getElementById('skills');
+      skills.forEach(skill => {
+        const skillElement = document.createElement('span');
+        skillElement.className = 'skill';
+        skillElement.textContent = skill;
+        skillsContainer.appendChild(skillElement);
+      });
+    </script>
+  </body>
+</html>

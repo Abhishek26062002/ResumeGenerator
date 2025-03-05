@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Professional Resume</title>
+    <style>
+      :root {
+        --primary: #1f2937;
+        --secondary: #3b82f6;
+        --accent: #e0e7ff;
+        --text-main: #1e293b;
+        --text-light: #64748b;
+        --bg-light: #f8fafc;
+        --border: #cbd5e1;
+        --white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background: var(--bg-light);
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        background: var(--white);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        background: var(--primary);
+        color: var(--white);
+        padding: 2.5rem;
+        text-align: center;
+      }
+
+      .name {
+        font-size: 2.2rem;
+        font-weight: 600;
+      }
+
+      .title {
+        font-size: 1.2rem;
+        color: var(--accent);
+        margin-top: 0.5rem;
+      }
+
+      .contact {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .content {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+        color: var(--primary);
+        font-weight: 600;
+        border-bottom: 2px solid var(--secondary);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .card {
+        background: var(--bg-light);
+        padding: 1.2rem;
+        border-left: 4px solid var(--secondary);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .date {
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+
+      .skill-category {
+        background: var(--white);
+        padding: 1rem;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .skill-title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .highlights {
+        list-style: none;
+        margin-top: 0.5rem;
+      }
+
+      .highlights li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .highlights li::before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        color: var(--secondary);
+      }
+
+      @media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .header {
+    background-color: var(--primary) !important;
+    color: var(--white);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .card {
+    break-inside: avoid;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="name">John Doe</h1>
+        <div class="title">Software Engineer</div>
+        <div class="contact">
+          <span>johndoe@email.com</span>
+          <span>|</span>
+          <span>(123) 456-7890</span>
+          <span>|</span>
+          <span>New York, NY</span>
+        </div>
+      </header>
+
+      <main class="content">
+        <section>
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <div class="skill-title">Programming</div>
+              <div>Python, Java, JavaScript, C++</div>
+            </div>
+            <div class="skill-category">
+              <div class="skill-title">Web Technologies</div>
+              <div>React, Node.js, Django, REST APIs</div>
+            </div>
+            <div class="skill-category">
+              <div class="skill-title">Databases</div>
+              <div>PostgreSQL, MongoDB, MySQL</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Experience</h2>
+          <div class="card">
+            <div class="card-header">
+              <div>Software Engineer - TechCorp</div>
+              <div class="date">2020 - Present</div>
+            </div>
+            <ul class="highlights">
+              <li>Developed scalable web applications using React and Node.js</li>
+              <li>Optimized backend services to improve performance by 30%</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Education</h2>
+          <div class="card">
+            <div class="card-header">
+              <div>Bachelor's in Computer Science - XYZ University</div>
+              <div class="date">2016 - 2020</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
